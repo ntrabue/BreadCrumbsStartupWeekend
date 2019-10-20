@@ -1,2 +1,0 @@
-# BreadCrumbsStartupWeekend
-Created with CodeSandbox
