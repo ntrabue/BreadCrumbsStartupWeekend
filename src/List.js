@@ -6,9 +6,11 @@ import { useAppState } from "./State";
 const List = () => {
   const { data, view } = useAppState();
 
-  const visible = view === "personal" ? data.filter(item => item.pinned) : data;
+  const visible =
+    view === "personal"
+      ? data.filter(item => item.pinned)
+      : data.filter(item => !item.pinned);
 
-  console.log(visible);
   return (
     <Container>
       <Grid container spacing={3}>

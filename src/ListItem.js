@@ -54,11 +54,11 @@ const ListItem = item => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon
-            className={item.item.pinned && classes.pinned}
-            onClick={() => dispatch({ type: "toggle", item: item.item })}
-          />
+        <IconButton
+          aria-label="add to favorites"
+          onClick={() => dispatch({ type: "toggle", item: item.item })}
+        >
+          <FavoriteIcon className={item.item.pinned ? classes.pinned : ""} />
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
