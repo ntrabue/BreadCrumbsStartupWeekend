@@ -12,6 +12,7 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import { useAppReducer } from "./State";
+import moment from "moment";
 
 const useStyles = makeStyles(theme => ({
   media: {
@@ -38,7 +39,7 @@ const ListItem = item => {
           </Avatar>
         }
         title={item.item.title}
-        subheader="September 14, 2016"
+        subheader={moment(item.item.date).format("LLL")}
       />
       <CardMedia
         image={item.item.photo}
@@ -48,9 +49,7 @@ const ListItem = item => {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {item.item.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
